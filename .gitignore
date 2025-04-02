@@ -1,0 +1,19 @@
+
+# Ignore datasets
+CIFAR_10/datasets/
+MNIST/datasets/
+
+# Ignore large files and logs
+*.pth
+*.tar.gz
+*.log
+
+# Python cache
+__pycache__/
+*.pyc
+
+# Others
+.ipynb_checkpoints/
+weights/
+logs/
+examples/
