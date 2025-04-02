@@ -4,9 +4,7 @@ CIFAR_10/datasets/
 MNIST/datasets/
 
 # Ignore large files and logs
-*.pth
 *.tar.gz
-*.log
 
 # Python cache
 __pycache__/

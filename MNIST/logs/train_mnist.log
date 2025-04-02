@@ -1,0 +1,11 @@
+2025-04-02 10:25:24 - INFO - Epoch 1/10, Loss: 0.1164, Accuracy: 96.45%
+2025-04-02 10:25:34 - INFO - Epoch 2/10, Loss: 0.0393, Accuracy: 98.82%
+2025-04-02 10:25:43 - INFO - Epoch 3/10, Loss: 0.0255, Accuracy: 99.20%
+2025-04-02 10:25:52 - INFO - Epoch 4/10, Loss: 0.0192, Accuracy: 99.37%
+2025-04-02 10:26:01 - INFO - Epoch 5/10, Loss: 0.0174, Accuracy: 99.42%
+2025-04-02 10:26:11 - INFO - Epoch 6/10, Loss: 0.0132, Accuracy: 99.58%
+2025-04-02 10:26:21 - INFO - Epoch 7/10, Loss: 0.0117, Accuracy: 99.63%
+2025-04-02 10:26:31 - INFO - Epoch 8/10, Loss: 0.0102, Accuracy: 99.66%
+2025-04-02 10:26:40 - INFO - Epoch 9/10, Loss: 0.0079, Accuracy: 99.77%
+2025-04-02 10:26:50 - INFO - Epoch 10/10, Loss: 0.0081, Accuracy: 99.76%
+2025-04-02 10:26:50 - INFO - Model saved: weights/model_for_mnist.pth
