@@ -33,6 +33,7 @@ model.eval()
 
 # MNIST 데이터셋 로드
 transform = transforms.Compose([transforms.ToTensor()])
+os.makedirs('datasets', exist_ok=True)
 testset = datasets.MNIST(root="./datasets", train=False, transform=transform, download=True)
 testloader = DataLoader(testset, batch_size=100, shuffle=False)
 
