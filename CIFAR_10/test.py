@@ -126,6 +126,7 @@ def pgd_untargeted(model, x, label, eps, alpha=0.01, iters=10):
 
     return x_adv
 
+# 평가 함수
 def evaluate_attack(model, attack_fn, eps, targeted):
     correct, total = 0, 0
     success_examples = []
@@ -160,7 +161,7 @@ def evaluate_attack(model, attack_fn, eps, targeted):
     success_rate = correct / total
     return success_rate, success_examples
 
-
+# 예시 저장
 def plot_examples(eps, examples, title, attack_type):
     random.shuffle(examples)
     examples = examples[:5]
