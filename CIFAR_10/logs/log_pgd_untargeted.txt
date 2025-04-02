@@ -1,0 +1,5 @@
+Epsilon: 0.05, PGD_Untargeted Success Rate: 100.00%
+Epsilon: 0.1, PGD_Untargeted Success Rate: 100.00%
+Epsilon: 0.15, PGD_Untargeted Success Rate: 100.00%
+Epsilon: 0.2, PGD_Untargeted Success Rate: 100.00%
+Epsilon: 0.3, PGD_Untargeted Success Rate: 100.00%

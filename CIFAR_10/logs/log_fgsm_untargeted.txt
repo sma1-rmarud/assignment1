@@ -1,0 +1,5 @@
+Epsilon: 0.05, FGSM_Untargeted Success Rate: 100.00%
+Epsilon: 0.1, FGSM_Untargeted Success Rate: 100.00%
+Epsilon: 0.15, FGSM_Untargeted Success Rate: 100.00%
+Epsilon: 0.2, FGSM_Untargeted Success Rate: 83.33%
+Epsilon: 0.3, FGSM_Untargeted Success Rate: 100.00%
