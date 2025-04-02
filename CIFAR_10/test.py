@@ -39,6 +39,7 @@ transform = transforms.Compose([
 ])
 
 # CIFAR-10 데이터셋 로드
+os.makedirs('datasets', exist_ok=True)
 testset = datasets.CIFAR10(root="./datasets", train=False, download=True, transform=transform)
 testloader = DataLoader(testset, batch_size=1, shuffle=True)
 

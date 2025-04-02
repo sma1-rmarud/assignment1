@@ -30,7 +30,7 @@ transform = transforms.Compose([
     transforms.ToTensor(),
     transforms.Normalize((0.1307,), (0.3081,))
 ])
-
+os.makedirs('datasets', exist_ok=True)
 trainset = datasets.MNIST(root='./datasets', train=True, download=True, transform=transform)
 trainloader = DataLoader(trainset, batch_size=64, shuffle=True)
 
