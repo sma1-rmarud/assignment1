@@ -50,8 +50,8 @@ def fgsm_targeted(model, x, target, eps):
 
     if x.grad is None:
         raise ValueError("x.grad is None! Backpropagation might have failed.")
-    adv_x = x - eps * x.grad.sign()
-    return torch.clamp(adv_x, 0, 1)
+    x_adv = x - eps * x.grad.sign()
+    return torch.clamp(x_adv, 0, 1)
 
 # Untargeted FGSM attack 시행
 def fgsm_untargeted(model, x, label, eps):
@@ -64,8 +64,8 @@ def fgsm_untargeted(model, x, label, eps):
     model.zero_grad()
     loss.backward()
 
-    adv_x = x + eps * x.grad.sign()
-    return torch.clamp(adv_x, 0, 1)
+    x_adv = x + eps * x.grad.sign()
+    return torch.clamp(x_adv, 0, 1)
 
 # Targeted PGD attack 시행
 def pgd_targeted(model, x, target, eps, alpha=0.01, iters=40):
@@ -124,11 +124,11 @@ def evaluate_attack(model, attack_fn, eps, targeted):
 
         if targeted:
             target_labels = (label + 1) % 10  # 타겟 레이블 설정
-            adv_x = attack_fn(model, x, target_labels, eps)
+            x_adv = attack_fn(model, x, target_labels, eps)
         else:
-            adv_x = attack_fn(model, x, label, eps)
+            x_adv = attack_fn(model, x, label, eps)
 
-        adv_output = model(adv_x)
+        adv_output = model(x_adv)
         adv_pred = adv_output.argmax(dim=1)
 
         total += label.size(0)
@@ -140,7 +140,7 @@ def evaluate_attack(model, attack_fn, eps, targeted):
 
         for j in range(len(label)):
             if (targeted and adv_pred[j] == target_labels[j]) or (not targeted and adv_pred[j] != label[j]):
-                success_examples.append((x[j].cpu(), adv_x[j].cpu(), label[j].item(), adv_pred[j].item()))
+                success_examples.append((x[j].cpu(), x_adv[j].cpu(), label[j].item(), adv_pred[j].item()))
 
         if len(success_examples) >= 10:
             break
